@@ -9,9 +9,41 @@ export default ({ coord, text }) => (
     <View
       style={{
         backgroundColor: 'rgba(170,70,200,0.7)',
+        borderRadius: 25,
+        width: 50,
+        height: 50,
+        padding: 5,
+        justifyContent: 'space-around',
+        alignItems: 'center',
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        flex: 1,
       }}
     >
-      <Text>{text}</Text>
+      <Text
+        style={{
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        {text}
+      </Text>
+      <Text
+        style={{
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        {text}
+      </Text>
+      <Text
+        style={{
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        {text}
+      </Text>
     </View>
   </Marker>
 );
