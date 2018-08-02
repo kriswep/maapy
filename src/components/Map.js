@@ -2,13 +2,19 @@ import React from 'react';
 import { MapView } from 'expo';
 
 import Marker from './Marker';
-import emotes from '../data/emotes';
+import locationEmotes from '../data/locationEmotes';
 
 export default class App extends React.Component {
   renderMarkers() {
-    return emotes.map(emote => (
-      <Marker key={emote.id} coord={emote.coords} text={emote.char} />
-    ));
+    return locationEmotes.map(location => {
+      const emotes = location.emotes.reduce(
+        (acc, emote) => [...acc, emote.char],
+        [],
+      );
+      return (
+        <Marker key={location.id} coord={location.coords} emotes={emotes} />
+      );
+    });
   }
 
   render() {
